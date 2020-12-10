@@ -1,6 +1,7 @@
 package com.tests.podiun.atom;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -25,15 +26,14 @@ public class ChromeBrowser extends RemoteWebDriver {
         this.manage().window().maximize();
     }
 
-    public void safeClick(String cssSelector) {
+    public void safeClick(WebElement element) {
         WebDriverWait wait = new WebDriverWait(this, 3);
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(cssSelector)))
-                .click();
+        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
     }
 
-    public void safeType(String cssSelector, String text) {
+    public void safeType(WebElement element, String text) {
         WebDriverWait wait = new WebDriverWait(this, 3);
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(cssSelector)))
+        wait.until(ExpectedConditions.elementToBeClickable(element))
                 .sendKeys(text);
     }
 
