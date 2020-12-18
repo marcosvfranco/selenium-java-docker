@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Selenium Podiun" verbose="1" >
+    <test name="Regression1">
+        <classes>
+            <class name="com.tests.podiun.HomeTest"/>
+            <class name="com.tests.podiun.LoginTest"/>
+        </classes>
+    </test>
+</suite>

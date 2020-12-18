@@ -38,19 +38,19 @@ public class HomeTest {
         driver.quit();
     }
 
-    @Test
+    @Test(description ="Verifying Home Page components")
     public void verifyHomePage () {
         Assert.assertEquals(driver.getTitle(), homeTitle);
         Assert.assertTrue(homePage.verifyMenuDisplayed());
     }
 
-    @Test
+    @Test(description = "Verifying SubMenu displayed")
     public void verifySubMenuDisplayed() {
         Reporter.log("Verifying SubMenu displayed",true);
         Assert.assertTrue(homePage.verifySubMenuDisplayed(driver));
     }
 
-    @Test
+    @Test(description = "Verifying SubMenu ReviewsLink")
     public void verifySubMenuReviewLink () throws IOException {
         Reporter.log("Verifying SubMenu ReviewsLink",true);
         homePage.clickSubMenuLink("Reviews", driver);
